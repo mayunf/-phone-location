@@ -9,15 +9,19 @@ namespace Mayunfeng\PhoneLocation;
 
 class PhoneLocation
 {
-    const DATA_FILE = __DIR__.'/phone.dat';
+//    const DATA_FILE = __DIR__.'/phone.dat';
+    public $file = __DIR__.'/phone.dat';
     protected static $spList = [1=>'移动', 2=>'联通', 3=>'电信', 4=>'电信虚拟运营商', 5=>'联通虚拟运营商', 6=>'移动虚拟运营商'];
     private $_fileHandle = null;
     private $_fileSize = 0;
 
-    public function __construct()
+    public function __construct($file = null)
     {
-        $this->_fileHandle = fopen(self::DATA_FILE, 'r');
-        $this->_fileSize = filesize(self::DATA_FILE);
+        if (!is_null($file)) {
+            $this->file = $file;
+        }
+        $this->_fileHandle = fopen($this->file, 'r');
+        $this->_fileSize = filesize($this->file);
     }
 
     /**
