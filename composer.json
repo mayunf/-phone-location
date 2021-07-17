@@ -1,0 +1,21 @@
+{
+    "name": "mayunfeng/phone-location",
+    "description": "location of phone number",
+    "keywords": ["phone", "location"],
+    "license": "MIT",
+    "homepage": "https://github.com/mayunf/phone-location",
+    "authors": [
+        {
+            "name": "mayunfeng",
+            "email": "yunfeng0614@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mayunfeng\\PhoneLocation\\": "src/"
+        }
+    }
+}
